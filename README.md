@@ -3,9 +3,11 @@ Compilation of scripts I made to interact with EntryScape.
 
 
 # How to?
-taskrunner.sh
+autoSend.sh
 - Usage: -u username -p password -f file -r resourceID -e endpoint (e.g eskilstuna.entryscape.net)
 
+snedInput.sh
+- Follow the instructions on screen
 
 
 
