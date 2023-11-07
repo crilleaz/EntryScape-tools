@@ -12,6 +12,8 @@ echo "File to upload? (e.g. /home/Grillplatser.json)"
 read FILE
 echo "Resource ID?"
 read RESOURCE
+echo "Store ID?"
+read STOREID
 echo "Endpoint?"
 read ENDPOINT
 
@@ -21,11 +23,12 @@ USERNAME=$USERNAME
 PASSWORD=$PASSWORD
 RESOURCE=$RESOURCE
 FILE=$FILE
+STOREID=$STOREID
 ENDPOINT=$ENDPOINT
 
 # URL for authentication and file upload
 AUTH_URL="https://$ENDPOINT/store/auth/cookie"
-UPLOAD_URL="https://$ENDPOINT/taskrunner/v1/distribution/replaceFile?resourceURI=https://$ENDPOINT/store/1/resource/$RESOURCE"
+UPLOAD_URL="https://$ENDPOINT/taskrunner/v1/distribution/replaceFile?resourceURI=https://$ENDPOINT/store/$STOREID/resource/$RESOURCE"
 
 # Log file path
 LOG_FILE="log.txt"
