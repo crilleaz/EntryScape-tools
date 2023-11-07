@@ -15,6 +15,7 @@ sendInput.sh
 - Follow the instructions on screen
 
 sendInput.php
+- Change line 11: $endpointUrl = "YOUR_ENDPOINT"; (e.g. $endpointUrl = "eskilstuna.entryscape.net";)
 - Upload to your webserver and visit URL/sendInput.php, then follow instructions on screen
 
 autoSend.php
