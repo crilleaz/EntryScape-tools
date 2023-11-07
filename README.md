@@ -1,6 +1,8 @@
 # EntryScape-tools
 Compilation of scripts I made to interact with EntryScape.
 
+We're using cookies (https://swagger.entryscape.com/#/auth/loginCookie) to authenticate the user.
+Files "cookie.txt" and "log.txt" are created with these scripts; each respective file needs permission to create these files.
 
 # How to?
 autoSend.sh
@@ -9,6 +11,8 @@ autoSend.sh
 sendInput.sh
 - Follow the instructions on screen
 
+sendInput.php
+- Upload to your webserver and visit URL/sendInput.php, then follow instructions on screen
 
 
 
