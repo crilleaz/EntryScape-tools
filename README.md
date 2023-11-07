@@ -1,7 +1,7 @@
 # EntryScape-tools
 Compilation of scripts I made to interact with EntryScape.
 
-We're using cookies (https://swagger.entryscape.com/#/auth/loginCookie) to authenticate the user.
+We're using cookies (https://swagger.entryscape.com/#/auth/loginCookie) to authenticate the user.<br>
 Files "cookie.txt" and "log.txt" are created with these scripts; each respective file needs permission to create these files.
 
 # How to?
