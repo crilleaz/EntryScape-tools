@@ -6,7 +6,7 @@ Files "cookie.txt" and "log.txt" are created with these scripts; each respective
 
 # How to?
 autoSend.sh
-- Usage ./autoSend.sh: -u username -p password -f file -r resourceID -s storeID -e endpoint (e.g eskilstuna.entryscape.net)
+- Usage ./autoSend.sh -u username -p password -f file -r resourceID -s storeID -e endpoint (e.g eskilstuna.entryscape.net)
 
 sendInput.sh
 - Usage ./sendInput.sh
