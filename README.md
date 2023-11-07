@@ -18,7 +18,7 @@ sendInput.php
 - Upload to your webserver and visit URL/sendInput.php, then follow instructions on screen
 
 autoSend.php
-- Usage: php autoSend.php -u username -p password -f filename -s storeID -r resourceID -e endpoint
+- Usage: php autoSend.php -u username -p password -f filename -s storeID -r resourceID -e endpoint (e.g eskilstuna.entryscape.net)
 
 
 
