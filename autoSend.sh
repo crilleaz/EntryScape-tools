@@ -8,15 +8,17 @@ USERNAME=""
 PASSWORD=""
 FILE=""
 RESOURCE=""
+STOREID=""
 LOG_FILE="log.txt"
 
 # Parse command-line options using getopts
-while getopts "u:p:f:r:e:" opt; do
+while getopts "u:p:f:r:s:e:" opt; do
     case $opt in
         u) USERNAME="$OPTARG";;
         p) PASSWORD="$OPTARG";;
         f) FILE="$OPTARG";;
         r) RESOURCE="$OPTARG";;
+        s) STOREID="$OPTARG";;
         e) ENDPOINT="$OPTARG";;
         \?) echo "Invalid option: -$OPTARG" >&2; exit 1;;
     esac
@@ -24,13 +26,13 @@ done
 
 # Check if any of the required options are missing
 if [ -z "$USERNAME" ] || [ -z "$PASSWORD" ] || [ -z "$FILE" ] || [ -z "$RESOURCE" ]; then
-    echo "Usage: $0 -u <username> -p <password> -f <file> -r <resource_id> -e <endpoint (e.g eskilstuna.entryscape.net)>"
+    echo "Usage: $0 -u <username> -p <password> -f <file> -r <resource_id> -s <store_id> -e <endpoint (e.g eskilstuna.entryscape.net)>"
     exit 1
 fi
 
 # URL for authentication and file upload
 AUTH_URL="https://$ENDPOINT/store/auth/cookie"
-UPLOAD_URL="https://$ENDPOINT/taskrunner/v1/distribution/replaceFile?resourceURI=https://$ENDPOINT/store/1/resource/$RESOURCE"
+UPLOAD_URL="https://$ENDPOINT/taskrunner/v1/distribution/replaceFile?resourceURI=https://$ENDPOINT/store/$STOREID/resource/$RESOURCE"
 
 # Perform authentication and save the received cookie
 auth_response=$(curl -s -c cookies.txt -X POST "$AUTH_URL" -H "Content-Type: application/x-www-form-urlencoded" -d "auth_username=$USERNAME&auth_password=$PASSWORD&auth_maxage=86400")
@@ -42,7 +44,7 @@ if [[ "$auth_response" == *"Login successful"* ]]; then
     # Extract the auth_token from cookies.txt
     auth_token=$(awk -F'\t' '$6 == "auth_token" {print $7}' cookies.txt)
 
-    # Upload a file using the savd cookie and extracted auth_token
+    # Upload a file using the saved cookie and extracted auth_token
     upload_response=$(curl --location \
     --request POST "$UPLOAD_URL" \
     --header 'Content-Type: multipart/form-data' \
