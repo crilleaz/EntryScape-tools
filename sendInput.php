@@ -15,7 +15,8 @@ $logFile = "log.txt";
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["uploadFile"])) {
 	// URL for authentication and file upload
 	$resourceId = $_POST['resourceid'];
-	$uploadUrl = "https://$endpointUrl/taskrunner/v1/distribution/replaceFile?resourceURI=https://$endpointUrl/store/1/resource/$resourceId";
+    $storeId = $_POST['storeid'];
+	$uploadUrl = "https://$endpointUrl/taskrunner/v1/distribution/replaceFile?resourceURI=https://$endpointUrl/store/$storeId/resource/$resourceId";
 	
     // Get the uploaded file
     $file = $_FILES["uploadFile"];
@@ -106,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["uploadFile"])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>File Upload</title>
+    <title>EntryScape - Taskrunner</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -158,6 +159,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["uploadFile"])) {
         
         <label for="resourceid">Resource ID:</label>
         <input type="text" name="resourceid" id="resourceid" required>
+        <p>
+        <label for="storeid">Store ID:</label>
+        <input type="text" name="storeid" id="storeid" required>
         
         <input type="submit" value="Upload File">
     </form>
