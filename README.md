@@ -6,13 +6,16 @@ Files "cookie.txt" and "log.txt" are created with these scripts; each respective
 
 # How to?
 autoSend.sh
-- Usage: -u username -p password -f file -r resourceID -e endpoint (e.g eskilstuna.entryscape.net)
+- Usage: -u username -p password -f file -r resourceID -s storeID -e endpoint (e.g eskilstuna.entryscape.net)
 
 sendInput.sh
 - Follow the instructions on screen
 
 sendInput.php
 - Upload to your webserver and visit URL/sendInput.php, then follow instructions on screen
+
+autoSend.php
+- Usage: php autoSend.php -u username -p password -f filename -s storeID -r resourceID -e endpoint
 
 
 
