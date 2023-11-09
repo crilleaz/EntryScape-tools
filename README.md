@@ -21,7 +21,8 @@ sendInput.php
 autoSend.php
 - Usage: php autoSend.php -u username -p password -f filename -s storeID -r resourceID -e endpoint (e.g eskilstuna.entryscape.net)
 
-
+# Find more at EntryScapes official Git
+https://github.com/entryscape/community-tools
 
 # Contact
 christoffer.alvarsson3@eskilstuna.se
