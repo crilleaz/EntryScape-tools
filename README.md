@@ -26,8 +26,8 @@ autoSend.py
 - Please review the imports to identify the required modules.
 
 sendInput.py
-Usage: python sendInput.py
-Follow the instructions in your terminal.
+- Usage: python sendInput.py
+- Follow the instructions in your terminal.
 
 # Find more at EntryScapes official Git
 https://github.com/entryscape/community-tools
