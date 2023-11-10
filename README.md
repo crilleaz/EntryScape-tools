@@ -4,11 +4,10 @@ Compilation of scripts I made to interact with EntryScape.
 We're using cookies (https://swagger.entryscape.com/#/auth/loginCookie) to authenticate the user.<br>
 Files "cookies.txt" and "log.txt" are created with these scripts; each respective file needs permission to create these files.
 
-Using jq (https://jqlang.github.io/jq/) to parse JSON responses, install via "apt-get install jq".
-
 # How to?
 autoSend.sh
 - Usage ./autoSend.sh -u username -p password -f file -r resourceID -s storeID -e endpoint (e.g eskilstuna.entryscape.net)
+- Using jq (https://jqlang.github.io/jq/) to parse JSON responses, install via "apt-get install jq".
 
 sendInput.sh
 - Usage ./sendInput.sh
@@ -23,7 +22,7 @@ autoSend.php
 
 autoSend.py
 - Usage: python autoSend.py -u username -p password -f file -r resourceID -s storeID -e endpoint (e.g eskilstuna.entryscape.net)
-- (Please review the imports to identify the required modules)
+- Please review the imports to identify the required modules.
 
 # Find more at EntryScapes official Git
 https://github.com/entryscape/community-tools
