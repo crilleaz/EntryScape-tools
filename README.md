@@ -8,10 +8,10 @@ Using jq (https://jqlang.github.io/jq/) to parse JSON responses, install via "ap
 
 # How to?
 autoSend.sh
-- Usage ./autoSend.sh -u username -p password -f file -r resourceID -s storeID -e endpoint (e.g eskilstuna.entryscape.net)
+- Usage: ./autoSend.sh -u username -p password -f file -r resourceID -s storeID -e endpoint (e.g eskilstuna.entryscape.net)
 
 sendInput.sh
-- Usage ./sendInput.sh
+- Usage: ./sendInput.sh
 - Follow the instructions in your terminal.
 
 sendInput.php
@@ -24,6 +24,10 @@ autoSend.php
 autoSend.py
 - Usage: python autoSend.py -u username -p password -f file -r resourceID -s storeID -e endpoint (e.g eskilstuna.entryscape.net)
 - Please review the imports to identify the required modules.
+
+sendInput.py
+Usage: python sendInput.py
+Follow the instructions in your terminal.
 
 # Find more at EntryScapes official Git
 https://github.com/entryscape/community-tools
