@@ -51,6 +51,6 @@ For more EntryScape-related tools and information, please visit the official Ent
 
 ## Contact
 
-If you have any questions or need further assistance, please feel free to reach out to us:
+If you have any questions or need further assistance, please feel free to reach out to me:
 
 - Email: [christoffer.alvarsson3@eskilstuna.se](mailto:christoffer.alvarsson3@eskilstuna.se)
