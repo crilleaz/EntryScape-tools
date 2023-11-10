@@ -21,6 +21,10 @@ sendInput.php
 autoSend.php
 - Usage: php autoSend.php -u username -p password -f filename -s storeID -r resourceID -e endpoint (e.g eskilstuna.entryscape.net)
 
+autoSend.py
+- Usage: python autoSend.py -u username -p password -f file -r resourceID -s storeID -e endpoint (e.g eskilstuna.entryscape.net)
+- (Please review the imports to identify the required modules)
+
 # Find more at EntryScapes official Git
 https://github.com/entryscape/community-tools
 
