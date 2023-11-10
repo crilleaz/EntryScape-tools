@@ -1,36 +1,56 @@
 # EntryScape-tools
-Compilation of scripts I made to interact with EntryScape.
 
-We're using cookies (https://swagger.entryscape.com/#/auth/loginCookie) to authenticate the user.<br>
-Files "cookies.txt" and "log.txt" are created with these scripts; each respective file needs permission to create these files.
+This repository contains a collection of scripts designed to interact with EntryScape.
 
-Using jq (https://jqlang.github.io/jq/) to parse JSON responses, install via "apt-get install jq".
+We use cookies for user authentication. You can find the cookies used [here](https://swagger.entryscape.com/#/auth/loginCookie). These scripts create two necessary files: "cookies.txt" and "log.txt." Ensure that the respective permissions are set to allow the creation of these files.
 
-# How to?
-autoSend.sh
-- Usage: ./autoSend.sh -u username -p password -f file -r resourceID -s storeID -e endpoint (e.g eskilstuna.entryscape.net)
+## Bash Scripts
 
-sendInput.sh
-- Usage: ./sendInput.sh
-- Follow the instructions in your terminal.
+### autoSend.sh
 
-sendInput.php
-- Change line 11: $endpointUrl = "YOUR_ENDPOINT"; (e.g. $endpointUrl = "eskilstuna.entryscape.net";)
-- Upload sendInput.php to your webserver and visit URL/sendInput.php, follow instructions on screen.
+- **Usage:** `./autoSend.sh -u username -p password -f file -r resourceID -s storeID -e endpoint`
+- Example: `./autoSend.sh -u myusername -p mypassword -f myfile.json -r 123 -s 456 -e eskilstuna.entryscape.net`
 
-autoSend.php
-- Usage: php autoSend.php -u username -p password -f filename -s storeID -r resourceID -e endpoint (e.g eskilstuna.entryscape.net)
+### sendInput.sh
 
-autoSend.py
-- Usage: python autoSend.py -u username -p password -f file -r resourceID -s storeID -e endpoint (e.g eskilstuna.entryscape.net)
-- Please review the imports to identify the required modules.
+- **Usage:** `./sendInput.sh`
+- Follow the instructions provided in your terminal.
 
-sendInput.py
-- Usage: python sendInput.py
-- Follow the instructions in your terminal.
+## Python Scripts
 
-# Find more at EntryScapes official Git
-https://github.com/entryscape/community-tools
+### autoSend.py
 
-# Contact
-christoffer.alvarsson3@eskilstuna.se
+- **Usage:** `python autoSend.py -u username -p password -f file -r resourceID -s storeID -e endpoint`
+- Example: `python autoSend.py -u myusername -p mypassword -f myfile.json -r 123 -s 456 -e eskilstuna.entryscape.net`
+- Ensure you review the import statements to identify and install any required modules.
+
+### sendInput.py
+
+- **Usage:** `python sendInput.py`
+- Follow the instructions provided in your terminal.
+
+## PHP Scripts
+
+### sendInput.php
+
+- Change line 11: `$endpointUrl = "YOUR_ENDPOINT";` (e.g., `$endpointUrl = "eskilstuna.entryscape.net";`)
+- Upload `sendInput.php` to your webserver and visit `URL/sendInput.php`, then follow the on-screen instructions.
+
+### autoSend.php
+
+- **Usage:** `php autoSend.php -u username -p password -f filename -s storeID -r resourceID -e endpoint`
+- Example: `php autoSend.php -u myusername -p mypassword -f myfile.json -s 456 -r 123 -e eskilstuna.entryscape.net`
+
+## Dependencies
+
+- [jq](https://jqlang.github.io/jq/): Used to parse JSON responses. You can install it with `apt-get install jq`.
+
+## More Resources
+
+For more EntryScape-related tools and information, please visit the official EntryScape Git repository at [EntryScape Community Tools](https://github.com/entryscape/community-tools).
+
+## Contact
+
+If you have any questions or need further assistance, please feel free to reach out to us:
+
+- Email: [christoffer.alvarsson3@eskilstuna.se](mailto:christoffer.alvarsson3@eskilstuna.se)
