@@ -73,7 +73,7 @@ if [[ "$auth_response" == *"Login successful"* ]]; then
                 echo "File $FILE upload successfully at $(date)" >> "$LOG_FILE"
 
                 if [ "$USE_DATABASE" = true ]; then
-                    # Insert a row into the MySQL table 'taskrunner'
+                    # Insert a row into the MySQL table.
                     mysql -u "$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" <<EOF
                     INSERT INTO logs (file, store_id, resource_id, endpoint, status) VALUES ('$FILE', '$STOREID', '$RESOURCE', '$ENDPOINT', 'Success');
 EOF
@@ -84,7 +84,7 @@ EOF
                 echo "File $FILE failed to upload at $(date)" >> "$LOG_FILE"
 
                 if [ "$USE_DATABASE" = true ]; then
-                    # Insert a row into the MySQL table 'taskrunner'
+                    # Insert a row into the MySQL table.
                     mysql -u "$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" <<EOF
                     INSERT INTO logs (file, store_id, resource_id, endpoint, status) VALUES ('$FILE', '$STOREID', '$RESOURCE', '$ENDPOINT', 'Failed');
 EOF
