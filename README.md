@@ -10,6 +10,7 @@ We use cookies for user authentication. You can find the cookies used [here](htt
 
 - **Usage:** `./autoSend.sh -u username -p password -f file -r resourceID -s storeID -e endpoint`
 - Example: `./autoSend.sh -u myusername -p mypassword -f myfile.json -r 123 -s 456 -e eskilstuna.entryscape.net`
+- Optional: To enable MySQL interaction for saving logs to your database, edit lines 15 to 18 in the script.
 
 ### sendInput.sh
 
