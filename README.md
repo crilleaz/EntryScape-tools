@@ -50,6 +50,7 @@ We use cookies for user authentication. You can find the cookies used [here](htt
 ```sql
 CREATE TABLE logs (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    timestamp datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     file VARCHAR(255),
     store_id INT,
     resource_id INT,
