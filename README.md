@@ -44,6 +44,18 @@ We use cookies for user authentication. You can find the cookies used [here](htt
 ## Dependencies
 
 - [jq](https://jqlang.github.io/jq/): Used to parse JSON responses. You can install it with `apt-get install jq`.
+- [MySQL](https://www.mysql.com/): Used to store and manage data. You can set up the required MySQL database. Here's the SQL table definition for your project:
+
+```sql
+CREATE TABLE logs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    file VARCHAR(255),
+    store_id INT,
+    resource_id INT,
+    endpoint VARCHAR(255),
+    status VARCHAR(20)
+);
+```
 
 ## More Resources
 
