@@ -11,6 +11,12 @@ RESOURCE=""
 STOREID=""
 LOG_FILE="log.txt"
 
+# MySQL database configuration
+DB_USER=""
+DB_PASSWORD=""
+DB_NAME=""
+USE_DATABASE=false  # Set to true to enable database interaction
+
 # Parse command-line options using getopts
 while getopts "u:p:f:r:s:e:" opt; do
     case $opt in
@@ -65,10 +71,24 @@ if [[ "$auth_response" == *"Login successful"* ]]; then
                 echo "File upload successfully"
                 # Append a success message to the log file
                 echo "File $FILE upload successfully at $(date)" >> "$LOG_FILE"
+
+                if [ "$USE_DATABASE" = true ]; then
+                    # Insert a row into the MySQL table 'taskrunner'
+                    mysql -u "$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" <<EOF
+                    INSERT INTO logs (file, store_id, resource_id, endpoint, status) VALUES ('$FILE', '$STOREID', '$RESOURCE', '$ENDPOINT', 'Success');
+EOF
+                fi
                 break
             elif [[ "$job_status" == "Failed" ]]; then
                 echo "File upload failed"
                 echo "File $FILE failed to upload at $(date)" >> "$LOG_FILE"
+
+                if [ "$USE_DATABASE" = true ]; then
+                    # Insert a row into the MySQL table 'taskrunner'
+                    mysql -u "$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" <<EOF
+                    INSERT INTO logs (file, store_id, resource_id, endpoint, status) VALUES ('$FILE', '$STOREID', '$RESOURCE', '$ENDPOINT', 'Failed');
+EOF
+                fi
                 break
             else
                 echo "Job status: $job_status. Waiting..."
